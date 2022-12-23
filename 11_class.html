@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class myfunc {
+            constructor(myname) {
+                console.log(myname);
+            }
+        }
+        let dispname = new myfunc("urvashi");
+
+        class additions {
+            constructor(a, b) {
+                console.log(a + b);
+            }
+        }
+        let dispadd = new additions(10, 10);
+
+        class personInfo {
+            constructor(fname, mname, lname) {
+                this.fname = fname;
+                this.mname = mname;
+                this.lname = lname;
+                console.log(fname + " " + mname + " " + lname);
+            }
+        }
+        let dispData = new personInfo("abc", "xyz", "mno");
+    </script>
+</body>
+
+</html>
