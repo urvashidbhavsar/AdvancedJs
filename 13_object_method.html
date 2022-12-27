@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let person = {
+            name: "abc",
+            dob: "30-11-2000",
+            city: "surat"
+        };
+
+        console.log(person);
+        console.log(person.name + "," + person.dob + "," + person.city);
+
+        for (p in person) {
+            console.log(p + "=>" + person[p])
+        }
+
+        // object method : assign() 
+        // syntax : Object.assign(target, sources)
+        // this method returns the target object
+
+        let obj1 = { a: 1, b: 2, c: 3 };
+        let obj2 = Object.assign({ c: 5, d: 55 }, obj1);
+        // in object c can not replace the value.
+        console.log(obj2.c, obj2.d);
+
+        // object method : create()
+        // syntax : Object.create(prototype[, propertiesObject])  
+
+        function frt() {
+            this.fname = "mango";
+        }
+        function man() {
+            frt.call(this)
+        }
+        man.prototype = Object.create(frt.prototype);
+        const m = new man();
+        console.log(m.fname);
+
+        // object method : defineProperty() -> This method is used to describe some behavioral attributes of the property.
+        // syntax : Object.defineProperty(obj, prop, descriptor)  
+        const obj3 = {};
+        Object.defineProperty(obj3, 'property1', {
+            value: 22, value: 23
+        })
+        console.log(obj3.property1);
+
+        // object method : 	defineProperties() -> This method is used to create or configure multiple object properties.
+        // syntax : Object.defineProperties(obj, props)
+
+        const obj4 = {};
+        Object.defineProperties(obj4, {
+            property1: {
+                value: 22, value: 23, value: 4
+            },
+            property2: {}
+        });
+        console.log(obj4.property1);
+        // take one property with only one object.
+
+        // object method : entries() -> This method returns an array with arrays of the key, value pairs.
+        // syntax : Object.entries(obj);
+
+        const eobj = { 1: "abc", 2: "xyz", 3: "pqr" };
+        console.log(Object.entries(eobj)[1]);
+
+        // object method : freeze() -> This method prevents existing properties from being removed.
+        // syntax : Object.freeze(obj)
+
+        const f1 = { property4: "New data" };
+        const f2 = Object.freeze(f1);
+        f2.property4 = "New another data";
+        console.log(f2.property4);
+
+        // object method : 	getOwnPropertyDescriptor() -> This method returns a property descriptor for the specified property of the specified object.
+        // syntax :Object.getOwnPropertyDescriptor(obj, prop)  
+
+        const pd1 = {
+            property5: 42
+        }
+        let des1 = Object.getOwnPropertyDescriptor(pd1, 'property5');
+        console.log(des1.configurable + " " + des1.enumerable);
+        console.log(des1.value);
+
+        // object method : getOwnPropertyDescriptors() -> This method returns all own property descriptors of a given object.
+        // syntax : Object.getOwnPropertyDescriptors(obj)  
+        const pd2 = {
+            property6: 77
+        }
+        let des2 = Object.getOwnPropertyDescriptors(pd2);
+        console.log(des2.property6.value + " " + des2.property6.writable + " " + des2.property6);
+
+
+    </script>
+</body>
+
+</html>
