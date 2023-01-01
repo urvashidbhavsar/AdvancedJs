@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //syntax : var n=new Number(value);  
+
+        var x = 102; //integer value
+        var y = 102.2; // floating point value
+        var z = 13e4; //exponent value
+        var n = new Number(16); //integer value by number object
+
+        console.log(x);
+        console.log(y);
+        console.log(z);
+        console.log(n);
+
+        // javascript constant 
+        // MIN_VALUE	        returns the largest minimum value.
+        // MAX_VALUE	        returns the largest maximum value.
+        // POSITIVE_INFINITY	returns positive infinity, overflow value.
+        // NEGATIVE_INFINITY	returns negative infinity, overflow value.
+        // NaN	                represents "Not a Number" value.
+
+        // (1) isFinite() -> The JavaScript number isFinite() method determines whether the given value is a finite number
+        var num = 10;
+        console.log(isFinite(num));
+
+        // (2) isInteger() -> The JavaScript number isInteger() method determines whether the given value is an integer. 
+        var num1 = 10.10; // num1 = 10 -> return true
+        console.log(Number.isInteger(num1));
+
+        // (3) parseFloat() -> The JavaScript number parseFloat() method parses a string argument and converts it into a floating point number.
+        var num3 = "50.25string";
+        console.log(Number.parseFloat(num3));
+
+        // (4) parseInt() -> parses a string argument and converts it into an integer value.
+        var num4 = "50string";
+        console.log(Number.parseInt(num4));
+
+        // (5) toExponential() -> converts the given number into an exponential notation and returns it in the form of string.
+        var num5 = 9856222;
+        console.log(num5.toExponential(2));
+
+        // (6) toFixed() -> returns the string representing a number that has exact digits after the decimal point instead of exponential notation.
+        var num6 = 98.21;
+        var num7 = 98.8;
+        console.log(num6.toFixed());
+        console.log(num7.toFixed());
+
+        // (7) toPrecision() -> returns the string representing a number of specified precision.
+        var num8 = 98.21;
+        var num9 = 98.81;
+        console.log(num8.toPrecision(2));
+        console.log(num9.toPrecision(2));
+
+        // (8) toString() -> converts the given number into the string and returns it.
+        var num10 = 50;
+        var num11 = 50.5;
+        var num12 = -50;
+        console.log(num10.toString());
+        console.log(num11.toString());
+        console.log(num12.toString());
+
+    </script>
+</body>
+
+</html>
