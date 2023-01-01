@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = ["mango", "bananas", "oranges"];
+        var arr2 = ["papaya", "Grapes", "watermalon"]
+
+        console.log(arr1);
+        console.log(arr2);
+
+        console.log(arr1[1]);
+        console.log(arr2[2]);
+        console.log("-----------------");
+        for (i of arr1) {
+            console.log(i)
+        }
+        console.log("-------------------")
+        for (j of arr2) {
+            console.log(j)
+        }
+        // array methods : 
+        // (1) concat() - It returns a new array object that contains two or more merged arrays.
+
+        console.log(arr1.concat(arr2))
+
+        // (2) Copywithin - It copies the part of the given array with its own elements and returns the modified array.
+        var arr3 = ["apples", "kiwi"]
+        var arr4 = ["charry", "strobarry"]
+        console.log(arr3.copyWithin(arr4));
+
+
+        // (3) entries() - It creates an iterator object and a loop that iterates over each key/value pair.
+        var arr5 = ["apples", "kiwi", "cherry", "grapes"];
+        var it = arr5.entries();
+
+        for (var e of it) {
+            console.log(e);
+        }
+        // (4) every() - It determines whether all the elements of an array are satisfying the provided function conditions.
+        // syntax : array.every(callback(currentval,index,arr),thisArg)
+        function value_dis(elements, index, array) {
+            // check size of index values
+            return index < 5;
+        }
+        console.log(['25', '15', '60', '44', '78'].every(value_dis));
+
+        // (5) flat() - return a newly created array containing all the sub-array elements concatenated into it.
+        // var newArr = arr.flat(<depth>);
+
+        var flat_arr = ['rita', 'mahek', ['suraj', 'tina']];//2D array
+        var newflat_arr = flat_arr.flat();
+        console.log(newflat_arr);
+
+        // (6) flatMap() - It maps all array elements via mapping function, then flattens the result into a new array.
+        // syntax : 
+        // var newArr = arr.flatMap(function callback(currentValue[, index[, array]]) {
+        //     return element
+        // }[ , thisArg])  
+
+        var flatmap_arr = [8, 10, 12, 14];
+        console.log(flatmap_arr.flatMap(x => x / 2));
+
+        // (7) fill() -	It fills elements into an array with static values.
+        // syntax : arr.fill(value[, start[, end]])  
+        var fill_arr = ["html", "css", "js"];
+        // var res = fill_arr.fill("bootstrap");
+        var res = fill_arr.fill("bootstrap", 1);
+        console.log(res);
+
+        // (8) from() - It creates a new array carrying the exact copy of another array element.
+        // syntax : Array.from(object,map_fun,thisArg);  
+        var from_arr = Array.from("hello world");
+        console.log(from_arr);
+
+        // (9) filter() - 	It returns the new array containing the elements that pass the provided function conditions.
+        // syntax : array.filter(callback(currentvalue,index,arr),thisArg)  
+
+        var fil_num = [45, 10, 55, 78, 65, 5];
+        function check(value) {
+            return value > 50;
+        }
+        console.log(fil_num.filter(check));
+
+        // (10) find() - It returns the value of the first element in the given array that satisfies the specified condition.
+        // syntax : array.find(callback(value,index,arr),thisArg)
+        var find_arr = [1, 12, 25, 10, 45];
+        var find_res = find_arr.find(x => x > 20);
+        console.log(find_res);
+
+        // (11) findIndex() - It returns the index value of the first element in the given array that satisfies the specified condition.
+        //  syntax : array.findIndex(callback(value,index,arr),thisArg)  
+        var arr = [5, 22, 19, 25, 34];
+        var result = arr.findIndex(x => x > 20);
+        console.log(result)
+
+        // (12) forEach() - It invokes the provided function once for each element of an array.
+        // syntax : array.forEach(callback(currentvalue,index,arr),thisArg)  
+
+        var foreach_data = ["js", "advanced js", "react js"];
+        foreach_data.forEach(function (fetch) {
+            console.log(fetch)
+        })
+    </script>
+</body>
+
+</html>
